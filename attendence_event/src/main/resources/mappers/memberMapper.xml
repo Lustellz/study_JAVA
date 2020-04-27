@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "member">
+	<select id="selectMember"
+		resultType="com.poc_proj.event.model.MemberDetails">
+<![CDATA[
+SELECT * FROM member_info WHERE ID = #{ID}
+]]>
+	</select>
+	
+	<insert id="insertAttendedDate" parameterType= "java.lang.String">
+		<![CDATA[
+		DELIMITER $$
+		CREATE PROCEDURE insertAttendedDate
+		(IN ID VARCHAR(15), IN attendedDate DATE, OUT RESULT INT)
+		
+		BEGIN
+			DECLARE EXIT HANDLER FOR SQLEXCEPTION
+		
+				BEGIN
+					ROLLBACK;
+					SET RESULT = -1;
+				END;
+		
+			START TRANSACTION;
+				INSERT INTO calendar(ID, attendedDate) VALUE(#{ID}, SYSDATE());
+			COMMIT;
+			SET RESULT = 0;
+		
+		END$$
+		DELIMITER;
+		]]>
+	</insert>
+	
+	<select id="selectAttended" resultType="java.util.Map">
+	
+	<![CDATA[
+	SELECT * FROM calendar WHERE ID= #{ID}
+	]]>
+	</select>
+	
+
+</mapper>

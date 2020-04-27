@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+function member_validate() {
+	
+	  var userId = document.getElementById("userId").value;
+	  var userPw = document.getElementById("userPw").value;
+	  
+	  console.log(userPw);
+	    // 아이디 입력 유무 체크
+	    if(userId.legnth == 0 || !(userId.length >= 3 && userId.length <= 12)) {
+	        alert("아이디를 입력하시오");
+	        console.log("어디잇니");
+	        document.getElementById("uerId").focus();
+	        document.getElementById('userId').select();
+	        return false; // 아이디 입력이 안되어 있다면 submit 이벤트를 중지
+	    }
+	    
+	    // 암호 입력 유무 체크
+	    
+	    console.log(userId);
+	    if(userPw.length==0){
+	        alert("암호를 입력하세요.");
+	        console.log("여기 왔냐");
+	        documnet.getElementById("userPw").focus();
+	        documnet.getElementById("userPw").select();
+	        return false;
+	    }
+}
+</script>
+<title>Login</title>
+</head>
+<body>
+
+<form id = "fmField" name="fmField" action="" method = "post" encType="UTF-8" onsubmit = "return member_validate();" >
+<div class = "form">
+<table class="ftb">
+<tr><td>
+ID</td>
+<td><input type="text" name = "userId" id="userId"/></td>
+</tr>
+
+<tr>
+<td>
+Password
+</td>
+<td><input type="password" name = "user_pw" id="userPw"/> </td>
+</tr>
+<tr>
+<td colspan = "2">
+
+<input type="submit" action="/Account/login" value="login"/>
+<input type="reset" value = " 재입력">
+
+</td>
+</tr>
+</table>
+<input type="hidden" name= "user_address" value="location">
+</div>
+</form>
+
+</body>
+</html>

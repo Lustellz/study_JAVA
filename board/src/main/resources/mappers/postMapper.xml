@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace="com.board.mapper.PostMapper">
+ 
+    <insert id="postInsert" parameterType="com.board.domain.Post">
+        insert into post
+            values
+        (#{idx},#{title},#{content},#{member_email},now(),0)
+    </insert>
+ 
+ <select id="postList" resultType="com.board.domain.Post">
+ 
+ select * from post
+ 
+ </select>
+ 
+ <select id="postView" parameterType="int" resultType="com.board.domain.Post">
+ 
+ select * from post where idx = #{idx}
+ 
+ </select>
+ 
+ <update id="hitPlus" parameterType="int">
+ 	update post set hit = hit +1 where idx=#{idx}
+ </update>
+ 
+ <update id="postUpdate" parameterType="com.board.domain.Post">
+ 
+ 	update post set title = #{title}, content = #{content} where idx=#{idx}
+ 
+ </update>
+ 
+ <delete id="postDelete" parameterType="int">
+ 	delete from post where idx=#{idx}
+ </delete>
+ 
+</mapper>
