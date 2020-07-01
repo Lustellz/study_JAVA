@@ -29,6 +29,22 @@ public class VariableEx {
 		String strings = 7+7+"6";
 		strings = 7+"6"+7;
 		
+		int x = 10;
+		int y = 0;
+		
+		y=x++;
+		y=++x;
+		int z=10;
+		
+		System.out.println("x: "+x); //11
+		System.out.println("y: "+y); //10
+		System.out.println("z: "+ ++z);
+		System.out.println("z: "+ z++);
+		
+		int score = 85;
+		char grade =(score>90)?'A':((score>90)?'B':'F');
+		
+		System.out.println(grade);
 	}
 
 }
