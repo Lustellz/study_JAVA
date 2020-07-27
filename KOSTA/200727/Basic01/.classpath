@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="C:/rg/work/JSON/json_simple-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/rg/work/JSON/json-lib-2.3-jdk13.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/rg/work/JSON/commons-lang-2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/rg/work/JSON/commons-logging-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/rg/work/JSON/ezmorph-1.0.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/rg/work/JSON/commons-collections-3.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/rg/work/JSON/commons-beanutils.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_45"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
